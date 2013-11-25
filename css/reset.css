@@ -1,0 +1,11 @@
+/* Сброс стилей браузеров по умолчанию */
+html, body, ul, li, div, input, h2, h4 {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+input {
+	outline: 0;
+}

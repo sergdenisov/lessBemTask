@@ -1,0 +1,332 @@
+/* Общие блоки
+-------------------------------------------------------------------------------
+*/
+// Общие переменные
+@col-width: 115px;
+
+@min-indent: 5px;
+@small-indent: 10px;
+@block-indent: 15px;
+@standart-indent: 20px;
+@medium-indent: 30px;
+@large-indent: 40px;
+@max-indent: 50px;
+
+@black-color: #333333;
+@gray-color: #f5f5f5;
+@blue-color: #0099ff;
+@placeholder-color: #717171;
+
+// Строка
+.g-row {
+    min-width: (((@col-width + 1) * 2 + @block-indent) * 3) + @standart-indent * 2;
+    max-width: (((@col-width + 1) * 2 + @block-indent) * 4) + @standart-indent * 2;
+    margin: 0 auto;
+}
+
+// Задание цвета текста в placeholder для всех браузеров
+.placeholder {
+    color: @placeholder-color;
+    opacity: 1; 
+}
+::-webkit-input-placeholder {
+    .placeholder;
+}
+::-moz-placeholder {
+    .placeholder;
+}
+:-ms-input-placeholder {
+    .placeholder;
+}
+/* Конец Общих блоков
+-------------------------------------------------------------------------------
+*/
+
+/* Блоки
+-------------------------------------------------------------------------------
+*/
+
+// Текст
+.b-text {
+    font-size: 12px;
+    display: inline-block;
+    color: @black-color;
+}
+.b-text_style_h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+.b-text_style_h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+.b-text_style_small {
+    font-size: 11px;
+    color: #999999;
+}
+
+// Строка
+.b-line {
+    display: inline-block;
+    line-height: 20px;
+    width: 100%;
+}
+.b-line__left-part {
+    float: left;
+}
+.b-line__right-part {
+    float: right;
+    vertical-align: text-bottom;
+}
+.b-line__right-part_margin_right {
+    margin-right: @block-indent + @standart-indent;
+}
+.b-line__icon {
+    margin-right: @min-indent;
+}
+
+// Ссылка
+.b-link {
+    color: @black-color;
+    display: inline-block;
+    font-size: 13px;
+    text-decoration: none;
+}
+.b-link_color_gray {
+    color: #cccccc;
+}
+.b-link_size_medium {
+    font-size: 14px;
+}
+
+// Картинка
+.b-img {
+    vertical-align: middle;
+}
+
+// Кнопка
+.b-button {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: @gray-color;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+        background-color: darken(@gray-color, 10%);
+    }   
+    &:active {
+        position: relative;
+        top: 1px;
+        left: 1px;
+    }
+}
+.b-button__img {
+    display: inline-block;
+    padding-left: @small-indent;   
+}
+.b-button__text {
+    color: @black-color;
+    display: inline;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 28px;
+    padding: 0 @small-indent;
+}
+.b-button__img+.b-button__text {
+    padding-left: @min-indent;
+}
+.b-button_color_transparent {
+    background-color: transparent;
+    border-color: transparent;
+    &:hover {
+        background-color: transparent;
+        border-color: #333333;
+    }
+    .b-button__text {
+        color: inherit;
+    }
+    .b-button__text_color_bright-green {
+        color: #91d81e;
+    }
+}
+.b-button_color_blue {
+    border: 0;
+    background-color: @blue-color;
+    height: 45px;
+    width: 100px;
+    &:hover {
+        background-color: darken(@blue-color, 10%);
+    }
+    .b-button__text {
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+// Горизонтальное меню
+.b-horizontal-menu {
+    color: #cccccc;
+}
+.b-horizontal-menu__item {
+    display: inline-block;
+}
+
+// Вертикальные список
+.b-vertical-list {
+    color: @black-color;
+}
+.b-vertical-list__item {
+    display: inline-block;
+}
+
+// Коробка с текстом
+.b-text-box {
+    background-color: @gray-color;
+    height: 65px;
+    width: @col-width * 2;
+}
+.b-text-box__name {
+    padding: @block-indent 0 0 @block-indent;
+}
+.b-text-box__description {
+    display: block;
+    padding: 7px 0 0 @block-indent;   
+}
+
+// Коробка с картинкой
+.b-showcase-box {
+    width: @col-width * 2;
+    cursor: pointer;
+    border-right: 1px solid #efefef;
+    border-bottom: 1px solid #cfcfcf;
+    border-left: 1px solid #efefef;
+    border-radius: 3px;
+}
+.b-showcase-box__img {
+    height: 135px;
+    width: @col-width * 2;
+}
+
+// Страница
+.b-page {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+
+// Заголовок страницы
+.b-header {
+    border-bottom: 1px solid #cccccc;
+    box-shadow: 0 2px 2px rgba(231, 231, 231, 1)
+}
+.b-header__row {
+    height: 60px;
+}
+.b-header__row_border_bottom {
+    border-bottom: 1px solid #eeeeee;
+}
+.b-header__row_color_black {
+    height: auto;
+    background-color: #111111;
+}
+
+// Меню в заголовке
+.b-header-menu {
+    height: 50px;
+}
+.b-header-menu__logo {
+    float: left;
+    margin: 14.5px 0 14.5px @medium-indent;
+    height: 21px;
+}
+.b-header-menu__left-part {
+    float: left;
+    margin: @small-indent 0 @small-indent @large-indent;
+}
+.b-header-menu__right-part {
+    float: right;
+    margin: @small-indent @standart-indent @small-indent 0;
+}
+
+// Поиск
+.b-search {
+    position: relative;
+    top: 7px;
+    line-height: 45px;
+}
+.b-search__item {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 45px;
+}
+.b-search__img {
+    margin-left: @max-indent * 2;
+}
+.b-search__input {
+    border: 0;
+    margin-left: 9px;
+    font-size: 22px;
+    width: 61%;
+    line-height: 24px;
+    max-width: (@col-width + 1) * 5 + @block-indent * 3;
+}
+.b-search__button {
+    margin-left: @block-indent;
+}
+
+// Фильтры
+.b-filters {
+    position: relative;
+    top: @block-indent;
+}
+.b-filters__item {
+    display: inline-block;
+    margin-left: @small-indent;
+}
+.b-filters__item_position_left {
+    margin-left: 133px;   
+}
+.b-filters__item_position_right {
+    float: right;
+    margin-right: @standart-indent;
+}
+
+// Контент
+.b-content {
+    margin-top: @large-indent;
+    margin-bottom: @large-indent;
+}
+.b-content__row {
+    margin: @large-indent 0 0 @standart-indent;
+}
+
+// Компании
+.b-companies__content {
+    margin-top: @min-indent;
+    overflow: auto;
+}
+.b-companies__item {
+    float: left;
+    margin: @block-indent @block-indent 0 0;
+    border-bottom: 1px solid #efefef;
+    border-radius: 5px;
+}
+
+// Категории
+.b-categories {
+    overflow: auto;
+}
+.b-categories__item {
+    margin: @block-indent @block-indent 0 0;
+    padding: 0 @small-indent 0 @small-indent;
+    display: inline-block;
+}
+.b-categories__box {
+    margin-top: @block-indent;
+    padding: @block-indent 0 @block-indent 0;
+    width: (@col-width - @small-indent) * 2;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+/* Конец Блоков
+-------------------------------------------------------------------------------
+*/
